@@ -1,6 +1,6 @@
 # multi tools docker image
 * multi function docker image based on debian
-* available tools: tcpdump, dig, ab, awscli, boto3
+* available tools: tcpdump, dig, ab, awscli, boto3, stress
 simple use:
 ```
 docker run -it --name multi mstelles/multi:latest sh
