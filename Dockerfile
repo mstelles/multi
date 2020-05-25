@@ -3,4 +3,4 @@ RUN apt-get -y update && \
     apt-get -y install tcpdump python3 python3-pip apache2-utils dnsutils dnsutils stress procps && \
     apt-get autoclean && \
     pip3 install --user awscli
-ADD scripts/env.sh /usr/local/bin
+COPY scripts/env.sh /usr/local/bin
