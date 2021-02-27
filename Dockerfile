@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 RUN apt-get -y update && \
-    apt-get -y install sudo openssh-server && \
+    apt-get -y install sudo openssh-server netcat bind9utils fping && \
     apt-get autoclean
 
 RUN echo "root:123" | chpasswd
