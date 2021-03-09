@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 RUN apt-get -y update && \
-    apt-get -y install sudo openssh-server curl netcat bind9utils fping && \
+    apt-get -y install sudo openssh-server curl netcat dnsutils fping apache2-utils && \
     apt-get autoclean
 
 RUN echo "root:123" | chpasswd
@@ -14,6 +14,7 @@ ENV NOTVISIBLE="in users profile"
 
 # general configs
 COPY config/sudoers /etc/sudoers
+RUN echo "set -o vi" >> /etc/bash.bashrc
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
